@@ -1,0 +1,25 @@
+If you put app.py containing your flask app on the server.
+I put it into /flask/app.py
+
+Application path* should be :
+flask/app.py:app
+
+Working directory:
+/home/<your username>/ nothing !
+
+Environment variables:
+FLASK_APP=app.py
+FLASK_ENV=production
+FLASK_DEBUG=1
+
+Environment variables
+MYSQL_HOST=mysql-host.alwaysdata.net
+MYSQL_USER=database-user
+MYSQL_PASSWORD=password
+MYSQL_DB=database-name
+MYSQL_PORT=3306
+
+virtualenv directory:
+flask/env
+
+if created with website cli.
