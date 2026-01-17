@@ -1,0 +1,37 @@
+
+1. PowerShell command to generate a key :
+ssh-keygen -t ed25519
+
+2. Generates 2 files located in C:\Users\<Your username>\.ssh
+id_ed25519.pub
+id_ed25519
+
+3. connect to the server using ftp :
+put the file :id_ed25519.pub on the root : / of server 
+
+
+4. Connect to the server SSH  (using web ssh usually):
+run those: SSH commands :
+mkdir -p ~/.ssh 
+chmod 700 ~/.ssh
+cat ~/id_ed25519.pub >> ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+rm ~/id_ed25519.pub
+
+5. the access is now created on the server you need to add the access on your pc go to :
+C:\Users\<Your username>\.ssh
+
+And edit the config file add :
+
+Host <powershell connection name>
+    HostName <ssh Host url>
+    User <ssh user of the server>
+    IdentityFile C:\Users\ALEX\.ssh\id_ed25519
+
+Remove <> !
+
+Test the connection put yes in powershell.
+
+after testing that it works you can rename your id_ed25519 file & put the same name into the config on your pc
+
+you can delete id_ed25519.pub from your pc
